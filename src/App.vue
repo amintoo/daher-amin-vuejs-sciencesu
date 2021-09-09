@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
+  
 
-      <CompanyHome />
+     <CompanyNav />
 
       <!-- <router-link to="/">Home</router-link> | -->
       <!-- <router-link to="/about">About</router-link> -->
       <router-view />
 
       <CompanyFooter />
-    </div>
+    
    
   </div>
 </template>
 
 <script>
-import CompanyHome from './components/CompanyHome.vue'
 import CompanyFooter from './components/CompanyFooter.vue'
+import CompanyNav from './components/CompanyNav.vue'
 
 export default {
  name: 'App',
  components:{
-   CompanyHome, 
-   CompanyFooter
+   CompanyNav,
+   CompanyFooter,
  }
 }
 </script>

@@ -2,7 +2,7 @@
     <div>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
+    <div class="container"> 
       <a class="navbar-brand" href="#">🤖 Sciences-U Data Company 🤖 </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -14,7 +14,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="teams.html">Team</a>
+            <router-link class="nav-link" to="/group">Teams</router-link>
           </li>
         </ul>
       </div>

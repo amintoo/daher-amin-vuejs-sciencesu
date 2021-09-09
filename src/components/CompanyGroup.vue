@@ -1,43 +1,46 @@
 <template>
-  <section class="page-section">
-    <div class="container">
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Récipients du Groupe</h1>
-          <table class="table table-dark">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">firstName</th>
-                <th scope="col">email</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(recipients, idx) in localRG" :key="recipients.id">
-                <th scope="row">{{ idx }}</th>
-                <td>{{ recipients.firstName }}</td>
-                <td>{{ recipients.email }}</td>
-               
-              </tr>
-            </tbody>
-          </table>
+ 
+ <div class="row">
+
+    <div class="col">
+
+      <div class="card mt-4">
+        <div class="card-body">
+          <h3 class="card-title">Nos équipes ! </h3>
+          <div class="card" >
+            <ul v-for='(recipientsGroup,idx) in localRG' :key='recipientsGroup.id' class="list-group list-group-flush text-center">
+
+              <li class="list-group-item" > {{recipientsGroup.title + ' (' + idx }} ) >
+                <button @click='openTeamDetails(recipientsGroup.id)' type="button" class="btn btn-secondary btn-sm">voir</button>
+
+              </li>
+
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-import { recipients } from "@/assets/js/recipientsGroup";
-console.log(recipients);
+import {recipientsGroup} from "@/assets/js/recipientsGroup";
+
+console.log(recipientsGroup);
+
 export default {
   name: "CompanyGroup",
   data: () => ({
     localRG: recipientsGroup,
   }),
 
-
-
+  methods:{
+    openTeamDetails(teamId){
+      this.$router.push({
+        name:'CompanyOneteam',
+        params:{teamId:teamId}
+      });
+    }
+  }
 };
 </script>
